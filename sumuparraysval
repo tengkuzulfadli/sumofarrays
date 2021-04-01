@@ -1,0 +1,32 @@
+using System;
+
+namespace LabSevenThree
+{
+    class MonthlySales
+    {
+        static void Main(string[] args)
+        {
+            double[] monthlyArr = new double[12]; //Declare array with 12 spots
+
+            int i; //declare initialisation
+
+
+            //Then, prompt user to store input up to 12 months
+            for (i = 0; i < 12; i++)
+            {
+                Console.WriteLine("Please enter total sales amount each month : ");
+                monthlyArr[i] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            
+            double totalSales = 0;
+            Array.ForEach(monthlyArr, i => totalSales += i); //This calculation is to get sum total of all sales amount for 12 months
+            double avgMonthlySales = totalSales / 12; //To get average amount per month of 12 months
+
+            Console.WriteLine("The total sales amount : " + totalSales);
+            Console.WriteLine("The average sales amount of 12 months is : " + avgMonthlySales);
+
+            Console.ReadKey();
+        }
+    }
+}
